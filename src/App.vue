@@ -5,9 +5,9 @@ import { supabase } from './lib/supabase';
 const guestbookEntries = ref([]);
 const name = ref('');
 const message = ref('');
-const fullName = ref("Your Name");
-const bio = ref("A short bio about yourself.");
 const profileImage = ref("/profile.jpg");
+const fullName = "Abrech D. Dela Cruz";
+const bio = "I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of a band called LArdy DArdy and OdeToTheMetz.";
 
 const fetchGuestbook = async () => {
   const { data, error } = await supabase.from('guestbook').select('*').order('created_at', { ascending: false });
@@ -31,14 +31,11 @@ onMounted(fetchGuestbook);
 
 <template>
   <div class="container">
-    <div class="profile">
-      <img :src="profileImage" alt="Profile Picture" class="profile-pic" />
-      <h1>{{ fullName }}</h1>
-      <p>{{ bio }}</p>
-    </div>
-    
-    <h1>Guestbook</h1>
-    
+    <img :src="profileImage" alt="Profile Picture" class="profile-pic" />
+    <h1>{{ fullName }}</h1>
+    <p>{{ bio }}</p>
+
+    <h2>Guestbook</h2>
     <form @submit.prevent="addEntry">
       <input v-model="name" placeholder="Your Name" required />
       <textarea v-model="message" placeholder="Your Message" required></textarea>
@@ -55,20 +52,7 @@ onMounted(fetchGuestbook);
 
 <style scoped>
 .container { max-width: 600px; margin: auto; padding: 20px; text-align: center; }
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
+.profile-pic { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; }
 input, textarea { width: 100%; margin: 5px 0; padding: 8px; }
 button { padding: 8px 15px; cursor: pointer; }
 ul { list-style: none; padding: 0; }
