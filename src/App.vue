@@ -45,7 +45,14 @@ onMounted(fetchGuestbook);
     </ul>
 
     <h2>Hobbies & Interests</h2>
-    <p>Guitar, Music, Gym, Watching TV Series & Films</p>
+    <ul>
+      <li>Guitar, Music, Gym, Watching TV Series & Films</li>
+    </ul>
+
+    <h2>Goals</h2>
+    <ul>
+      <li>I want to be successful in life.</li>
+    </ul>
 
     <h2>Picture Gallery</h2>
     <div class="gallery">
