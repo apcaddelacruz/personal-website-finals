@@ -30,7 +30,7 @@ onMounted(fetchGuestbook);
   <div class="container">
     <img :src="'/profile.jpg'" alt="Profile" class="profile-img" />
     <h1>Abrech D. Dela Cruz</h1>
-    <p>I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of a band called LArdy DArdy and OdeToTheMetz.</p>
+    <p>I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of bands called LArdy DArdy and OdeToTheMetz.</p>
     
     <h2>Education & Achievements</h2>
     <ul>
