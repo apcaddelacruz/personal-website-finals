@@ -30,7 +30,7 @@ onMounted(fetchGuestbook);
   <div class="container">
     <img :src="'/profile.jpg'" alt="Profile" class="profile-img" />
     <h1>Abrech D. Dela Cruz</h1>
-    <p>I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of bands called LArdy DArdy and OdeToTheMetz.</p>
+    <p>I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of a band called LArdy DArdy and OdeToTheMetz.</p>
     
     <h2>Education & Achievements</h2>
     <ul>
@@ -43,6 +43,9 @@ onMounted(fetchGuestbook);
       <li>A love message website</li>
       <li>A Python search engine where a message will pop that says a tree is planted for every 50 searches</li>
     </ul>
+
+    <h2>Hobbies & Interests</h2>
+    <p>Guitar, Music, Gym, Watching TV Series & Films</p>
 
     <h2>Picture Gallery</h2>
     <div class="gallery">
