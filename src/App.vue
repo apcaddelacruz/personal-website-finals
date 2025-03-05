@@ -28,10 +28,10 @@ onMounted(fetchGuestbook);
 
 <template>
   <div class="container">
-    <img :src="'/profile.jpg'" alt="Profile Picture" class="profile-pic" />
+    <img :src="'/profile.jpg'" alt="Profile" class="profile-img" />
     <h1>Abrech D. Dela Cruz</h1>
     <p>I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of a band called LArdy DArdy and OdeToTheMetz.</p>
-
+    
     <h2>Education & Achievements</h2>
     <ul>
       <li>Graduated JHS</li>
@@ -43,6 +43,11 @@ onMounted(fetchGuestbook);
       <li>A love message website</li>
       <li>A Python search engine where a message will pop that says a tree is planted for every 50 searches</li>
     </ul>
+
+    <h2>Picture Gallery</h2>
+    <div class="gallery">
+      <img v-for="i in 6" :key="i" :src="`/profile${i+1}.jpg`" alt="Gallery Image" class="gallery-img" />
+    </div>
 
     <h2>Guestbook</h2>
     <form @submit.prevent="addEntry">
@@ -61,10 +66,11 @@ onMounted(fetchGuestbook);
 
 <style scoped>
 .container { max-width: 600px; margin: auto; padding: 20px; text-align: center; }
-.profile-pic { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px; }
-h2 { margin-top: 20px; }
+.profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; }
 input, textarea { width: 100%; margin: 5px 0; padding: 8px; }
 button { padding: 8px 15px; cursor: pointer; }
 ul { list-style: none; padding: 0; }
 li { padding: 10px; border-bottom: 1px solid #ccc; }
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+.gallery-img { width: 100%; height: auto; border-radius: 10px; }
 </style>
