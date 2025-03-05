@@ -7,7 +7,7 @@ const name = ref('');
 const message = ref('');
 const profileImage = ref("/profile.jpg");
 const fullName = "Abrech D. Dela Cruz";
-const bio = "I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of a band called LArdy DArdy and OdeToTheMetz.";
+const bio = "I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of bands called LArdy DArdy and OdeToTheMetz.";
 
 const fetchGuestbook = async () => {
   const { data, error } = await supabase.from('guestbook').select('*').order('created_at', { ascending: false });
