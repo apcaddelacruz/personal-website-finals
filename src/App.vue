@@ -5,9 +5,6 @@ import { supabase } from './lib/supabase';
 const guestbookEntries = ref([]);
 const name = ref('');
 const message = ref('');
-const profileImage = ref("/profile.jpg");
-const fullName = "Abrech D. Dela Cruz";
-const bio = "I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of bands called LArdy DArdy and OdeToTheMetz.";
 
 const fetchGuestbook = async () => {
   const { data, error } = await supabase.from('guestbook').select('*').order('created_at', { ascending: false });
@@ -31,9 +28,21 @@ onMounted(fetchGuestbook);
 
 <template>
   <div class="container">
-    <img :src="profileImage" alt="Profile Picture" class="profile-pic" />
-    <h1>{{ fullName }}</h1>
-    <p>{{ bio }}</p>
+    <img :src="'/profile.jpg'" alt="Profile Picture" class="profile-pic" />
+    <h1>Abrech D. Dela Cruz</h1>
+    <p>I'm a Computer Science student from Asia Pacific College that is currently residing in Quezon City. I'm also a guitarist of a band called LArdy DArdy and OdeToTheMetz.</p>
+
+    <h2>Education & Achievements</h2>
+    <ul>
+      <li>Graduated JHS</li>
+      <li>Graduated SHS</li>
+    </ul>
+
+    <h2>IT Experience</h2>
+    <ul>
+      <li>A love message website</li>
+      <li>A Python search engine where a message will pop that says a tree is planted for every 50 searches</li>
+    </ul>
 
     <h2>Guestbook</h2>
     <form @submit.prevent="addEntry">
@@ -52,7 +61,8 @@ onMounted(fetchGuestbook);
 
 <style scoped>
 .container { max-width: 600px; margin: auto; padding: 20px; text-align: center; }
-.profile-pic { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; }
+.profile-pic { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 10px; }
+h2 { margin-top: 20px; }
 input, textarea { width: 100%; margin: 5px 0; padding: 8px; }
 button { padding: 8px 15px; cursor: pointer; }
 ul { list-style: none; padding: 0; }
